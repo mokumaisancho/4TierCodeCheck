@@ -1,0 +1,2015 @@
+[
+  {
+    "file": "calc.py",
+    "category": "simple",
+    "path": "test_corpus/simple/calc.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.31958299223333597
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 363.16358303884044
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 513.6211249628104
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.17804198432713747
+    }
+  },
+  {
+    "file": "empty.py",
+    "category": "simple",
+    "path": "test_corpus/simple/empty.py",
+    "tiers_4": {
+      "knot_score": 0.0,
+      "features": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.09254197357222438
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 55.436083988752216
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 350.9679170092568
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.10908301919698715
+    }
+  },
+  {
+    "file": "greet.py",
+    "category": "simple",
+    "path": "test_corpus/simple/greet.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.6514170090667903
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 66.32745801471174
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 315.67170802736655
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.18199998885393143
+    }
+  },
+  {
+    "file": "list_ops.py",
+    "category": "simple",
+    "path": "test_corpus/simple/list_ops.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.30824996065348387
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 54.44212496513501
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 300.43624999234453
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.2092909999191761
+    }
+  },
+  {
+    "file": "math_ops.py",
+    "category": "simple",
+    "path": "test_corpus/simple/math_ops.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.2827499993145466
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 55.14558299910277
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 325.3360420349054
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.17720903269946575
+    }
+  },
+  {
+    "file": "single_func.py",
+    "category": "simple",
+    "path": "test_corpus/simple/single_func.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.2720000338740647
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 59.572416997980326
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 306.84591695899144
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.10754098184406757
+    }
+  },
+  {
+    "file": "string_utils.py",
+    "category": "simple",
+    "path": "test_corpus/simple/string_utils.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.31345803290605545
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 55.21945795044303
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 300.88954203529283
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.1717080012895167
+    }
+  },
+  {
+    "file": "two_funcs.py",
+    "category": "simple",
+    "path": "test_corpus/simple/two_funcs.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.18683302914723754
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 55.93529104953632
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 384.8895829869434
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.12516602873802185
+    }
+  },
+  {
+    "file": "api_client.py",
+    "category": "medium",
+    "path": "test_corpus/medium/api_client.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.5297089810483158
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 58.00050002289936
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 298.25375002110377
+    },
+    "feature_a_v5": {
+      "score": 0.5700000000000001,
+      "time_ms": 0.31870801467448473
+    }
+  },
+  {
+    "file": "cache.py",
+    "category": "medium",
+    "path": "test_corpus/medium/cache.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.4528750432655215
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 56.067375000566244
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 309.4987920485437
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.3045839839614928
+    }
+  },
+  {
+    "file": "class_basic.py",
+    "category": "medium",
+    "path": "test_corpus/medium/class_basic.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.316707999445498
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 54.735584009904414
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 323.78675002837554
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.19691698253154755
+    }
+  },
+  {
+    "file": "conditional.py",
+    "category": "medium",
+    "path": "test_corpus/medium/conditional.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.3441250300966203
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.60883301263675
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 290.8395419945009
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.13683299766853452
+    }
+  },
+  {
+    "file": "counter.py",
+    "category": "medium",
+    "path": "test_corpus/medium/counter.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.4080830258317292
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.756416965276
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 382.25945801241323
+    },
+    "feature_a_v5": {
+      "score": 0.5700000000000001,
+      "time_ms": 0.2739170449785888
+    }
+  },
+  {
+    "file": "exceptions.py",
+    "category": "medium",
+    "path": "test_corpus/medium/exceptions.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.28908299282193184
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 59.929292008746415
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 292.883041955065
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.11554098455235362
+    }
+  },
+  {
+    "file": "file_handler.py",
+    "category": "medium",
+    "path": "test_corpus/medium/file_handler.py",
+    "tiers_4": {
+      "knot_score": 0.11389718076285239,
+      "features": {
+        "A": 0.0,
+        "B": 0.95,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0044444444444444444,
+        "H": 0.0
+      },
+      "time_ms": 0.47262501902878284
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 56.09804100822657
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 327.53416599007323
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.2733329893089831
+    }
+  },
+  {
+    "file": "loops.py",
+    "category": "medium",
+    "path": "test_corpus/medium/loops.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.31212501926347613
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 54.25320897484198
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 298.13316697254777
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.1534160110168159
+    }
+  },
+  {
+    "file": "recursion.py",
+    "category": "medium",
+    "path": "test_corpus/medium/recursion.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.34195801708847284
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 58.62320802407339
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 302.64179199002683
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.1531669986434281
+    }
+  },
+  {
+    "file": "validator.py",
+    "category": "medium",
+    "path": "test_corpus/medium/validator.py",
+    "tiers_4": {
+      "knot_score": 0.10955223880597016,
+      "features": {
+        "A": 0.0,
+        "B": 0.9,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.02,
+        "H": 0.0
+      },
+      "time_ms": 0.5444589769467711
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.654083997476846
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 320.07029198575765
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.28408400248736143
+    }
+  },
+  {
+    "file": "async_example.py",
+    "category": "complex",
+    "path": "test_corpus/complex/async_example.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.4416659940034151
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 55.57245801901445
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 894.7086669504642
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.2245419891551137
+    }
+  },
+  {
+    "file": "context_manager.py",
+    "category": "complex",
+    "path": "test_corpus/complex/context_manager.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.440083967987448
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 60.30491698766127
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 302.46362497564405
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.2811659942381084
+    }
+  },
+  {
+    "file": "decorators.py",
+    "category": "complex",
+    "path": "test_corpus/complex/decorators.py",
+    "tiers_4": {
+      "knot_score": 0.15007462686567163,
+      "features": {
+        "A": 0.0,
+        "B": 0.9,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.015,
+        "H": 0.25
+      },
+      "time_ms": 0.9221250074915588
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 56.69324996415526
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 363.01433300832286
+    },
+    "feature_a_v5": {
+      "score": 0.6,
+      "time_ms": 0.39962498703971505
+    }
+  },
+  {
+    "file": "generators.py",
+    "category": "complex",
+    "path": "test_corpus/complex/generators.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.49474998377263546
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.242667011450976
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 298.57758298749104
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.309040944557637
+    }
+  },
+  {
+    "file": "metaclass.py",
+    "category": "complex",
+    "path": "test_corpus/complex/metaclass.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.3060000017285347
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 60.46608299948275
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 318.11137503245845
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.14520797412842512
+    }
+  },
+  {
+    "file": "nested.py",
+    "category": "complex",
+    "path": "test_corpus/complex/nested.py",
+    "tiers_4": {
+      "knot_score": 0.2835820895522388,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 1.0
+      },
+      "time_ms": 0.3551670233719051
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 56.158708001021296
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 308.0735840485431
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.14833296881988645
+    }
+  },
+  {
+    "file": "pipeline.py",
+    "category": "complex",
+    "path": "test_corpus/complex/pipeline.py",
+    "tiers_4": {
+      "knot_score": 0.11382462686567164,
+      "features": {
+        "A": 0.0,
+        "B": 0.95,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.00375,
+        "H": 0.0
+      },
+      "time_ms": 0.6075419951230288
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.446833001449704
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 299.02916599530727
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.39199995808303356
+    }
+  },
+  {
+    "file": "state_machine.py",
+    "category": "complex",
+    "path": "test_corpus/complex/state_machine.py",
+    "tiers_4": {
+      "knot_score": 0.113955223880597,
+      "features": {
+        "A": 0.0,
+        "B": 0.95,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.005,
+        "H": 0.0
+      },
+      "time_ms": 0.6374159711413085
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 55.42629200499505
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 325.35070896847174
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.33187499502673745
+    }
+  },
+  {
+    "file": "crud_dup.py",
+    "category": "duplicate",
+    "path": "test_corpus/duplicate/crud_dup.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.5167089984752238
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 54.417209001258016
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 306.86458299169317
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.32654195092618465
+    }
+  },
+  {
+    "file": "exact_dup.py",
+    "category": "duplicate",
+    "path": "test_corpus/duplicate/exact_dup.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.38129196036607027
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 58.1172090023756
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 304.4711249531247
+    },
+    "feature_a_v5": {
+      "score": 0.6,
+      "time_ms": 0.23041595704853535
+    }
+  },
+  {
+    "file": "handler_dup.py",
+    "category": "duplicate",
+    "path": "test_corpus/duplicate/handler_dup.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.4872910212725401
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.341374980751425
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 293.73737500282004
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.2877499791793525
+    }
+  },
+  {
+    "file": "process_dup.py",
+    "category": "duplicate",
+    "path": "test_corpus/duplicate/process_dup.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.5236249999143183
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 55.40945800021291
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 302.47937503736466
+    },
+    "feature_a_v5": {
+      "score": 0.6,
+      "time_ms": 0.2685000072233379
+    }
+  },
+  {
+    "file": "transform_dup.py",
+    "category": "duplicate",
+    "path": "test_corpus/duplicate/transform_dup.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.5413750186562538
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 54.45524997776374
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 301.5321670100093
+    },
+    "feature_a_v5": {
+      "score": 0.6,
+      "time_ms": 0.334082986228168
+    }
+  },
+  {
+    "file": "validation_dup.py",
+    "category": "duplicate",
+    "path": "test_corpus/duplicate/validation_dup.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.5627080099657178
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 56.2376250163652
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 300.619000045117
+    },
+    "feature_a_v5": {
+      "score": 0.6,
+      "time_ms": 0.3007079940289259
+    }
+  },
+  {
+    "file": "dead_code.py",
+    "category": "issues",
+    "path": "test_corpus/issues/dead_code.py",
+    "tiers_4": {
+      "knot_score": 0.26865671641791045,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 1.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.3011670196428895
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 56.51612504152581
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 294.5343750179745
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.14233298134058714
+    }
+  },
+  {
+    "file": "deep_nesting.py",
+    "category": "issues",
+    "path": "test_corpus/issues/deep_nesting.py",
+    "tiers_4": {
+      "knot_score": 0.2835820895522388,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 1.0
+      },
+      "time_ms": 0.2952920040115714
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 53.539832995738834
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 300.1835829927586
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.16358302673324943
+    }
+  },
+  {
+    "file": "high_complexity.py",
+    "category": "issues",
+    "path": "test_corpus/issues/high_complexity.py",
+    "tiers_4": {
+      "knot_score": 0.2835820895522388,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 1.0
+      },
+      "time_ms": 0.60299999313429
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 52.890875027514994
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 309.45645802421495
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.19970897119492292
+    }
+  },
+  {
+    "file": "long_func.py",
+    "category": "issues",
+    "path": "test_corpus/issues/long_func.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.7053749868646264
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.220416027121246
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 309.6318749594502
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.22854196140542626
+    }
+  },
+  {
+    "file": "long_lambda.py",
+    "category": "issues",
+    "path": "test_corpus/issues/long_lambda.py",
+    "tiers_4": {
+      "knot_score": 0.0,
+      "features": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.16183301340788603
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 65.27379102772102
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 302.2194170043804
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.15887501649558544
+    }
+  },
+  {
+    "file": "long_lines.py",
+    "category": "issues",
+    "path": "test_corpus/issues/long_lines.py",
+    "tiers_4": {
+      "knot_score": 0.0,
+      "features": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.10829197708517313
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 54.42654201760888
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 299.3888750206679
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.07166701834648848
+    }
+  },
+  {
+    "file": "many_locals.py",
+    "category": "issues",
+    "path": "test_corpus/issues/many_locals.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.6559999892488122
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 55.521917005535215
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 310.81020802957937
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.22537499899044633
+    }
+  },
+  {
+    "file": "many_params.py",
+    "category": "issues",
+    "path": "test_corpus/issues/many_params.py",
+    "tiers_4": {
+      "knot_score": 0.2835820895522388,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 1.0
+      },
+      "time_ms": 0.23033400066196918
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 60.09866698877886
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 294.9904580018483
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.12508302461355925
+    }
+  },
+  {
+    "file": "all_issues.py",
+    "category": "mixed",
+    "path": "test_corpus/mixed/all_issues.py",
+    "tiers_4": {
+      "knot_score": 0.2537313432835821,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 1.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.44870900455862284
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 55.253083002753556
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 301.37495801318437
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.17133302753791213
+    }
+  },
+  {
+    "file": "complex_todo.py",
+    "category": "mixed",
+    "path": "test_corpus/mixed/complex_todo.py",
+    "tiers_4": {
+      "knot_score": 0.2537313432835821,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 1.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.31924998620525
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 53.994791000150144
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 303.31754201324657
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.1336669665761292
+    }
+  },
+  {
+    "file": "duplicate_todo.py",
+    "category": "mixed",
+    "path": "test_corpus/mixed/duplicate_todo.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.3352079656906426
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 58.39775002095848
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 312.5441669835709
+    },
+    "feature_a_v5": {
+      "score": 0.6,
+      "time_ms": 0.2040409599430859
+    }
+  },
+  {
+    "file": "mixed_quality.py",
+    "category": "mixed",
+    "path": "test_corpus/mixed/mixed_quality.py",
+    "tiers_4": {
+      "knot_score": 0.1767164179104478,
+      "features": {
+        "A": 0.0,
+        "B": 0.9,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.5,
+        "F": 0.02,
+        "H": 0.0
+      },
+      "time_ms": 0.3622089861892164
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.59549996582791
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 305.29487499734387
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.20650000078603625
+    }
+  },
+  {
+    "file": "partial_issues.py",
+    "category": "mixed",
+    "path": "test_corpus/mixed/partial_issues.py",
+    "tiers_4": {
+      "knot_score": 0.1733582089552239,
+      "features": {
+        "A": 0.0,
+        "B": 0.85,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.5,
+        "F": 0.045,
+        "H": 0.0
+      },
+      "time_ms": 0.44170801993459463
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.52820800989866
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 311.72345799859613
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.27058302657678723
+    }
+  },
+  {
+    "file": "todo_dead.py",
+    "category": "mixed",
+    "path": "test_corpus/mixed/todo_dead.py",
+    "tiers_4": {
+      "knot_score": 0.18656716417910446,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.5,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.27158402372151613
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 58.4054589853622
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 324.2977919871919
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.16620801761746407
+    }
+  },
+  {
+    "file": "one_liner.py",
+    "category": "edge",
+    "path": "test_corpus/edge/one_liner.py",
+    "tiers_4": {
+      "knot_score": 0.0,
+      "features": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.1005409867502749
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 73.85287497891113
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 315.59191597625613
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.10725000174716115
+    }
+  },
+  {
+    "file": "only_comments.py",
+    "category": "edge",
+    "path": "test_corpus/edge/only_comments.py",
+    "tiers_4": {
+      "knot_score": 0.0,
+      "features": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.10499998461455107
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 65.61679195147008
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 335.22054099012166
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.0588749535381794
+    }
+  },
+  {
+    "file": "only_strings.py",
+    "category": "edge",
+    "path": "test_corpus/edge/only_strings.py",
+    "tiers_4": {
+      "knot_score": 0.0,
+      "features": {
+        "A": 0.0,
+        "B": 0.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.10512495646253228
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.478624978102744
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 315.03370800055563
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.08800002979114652
+    }
+  },
+  {
+    "file": "special_chars.py",
+    "category": "edge",
+    "path": "test_corpus/edge/special_chars.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.36562501918524504
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 56.83475005207583
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 302.8992079780437
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.11912500485777855
+    }
+  },
+  {
+    "file": "unicode.py",
+    "category": "edge",
+    "path": "test_corpus/edge/unicode.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.7439159671775997
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 54.73912495654076
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 314.61820797994733
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.17979100812226534
+    }
+  },
+  {
+    "file": "api_routes.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/api_routes.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.4349590162746608
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 59.7622919594869
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 324.3875839980319
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.2966659958474338
+    }
+  },
+  {
+    "file": "auth.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/auth.py",
+    "tiers_4": {
+      "knot_score": 0.11389718076285239,
+      "features": {
+        "A": 0.0,
+        "B": 0.95,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0044444444444444444,
+        "H": 0.0
+      },
+      "time_ms": 0.7031250279396772
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 57.75383295258507
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 401.5288330265321
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.40924997301772237
+    }
+  },
+  {
+    "file": "config_loader.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/config_loader.py",
+    "tiers_4": {
+      "knot_score": 0.10955223880597016,
+      "features": {
+        "A": 0.0,
+        "B": 0.9,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.02,
+        "H": 0.0
+      },
+      "time_ms": 0.5567919579334557
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 69.92270797491074
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 562.5632080482319
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.32287498470395803
+    }
+  },
+  {
+    "file": "csv_parser.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/csv_parser.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.6048340001143515
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 69.40816703718156
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 422.3011250142008
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.3329159808345139
+    }
+  },
+  {
+    "file": "data_processor.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/data_processor.py",
+    "tiers_4": {
+      "knot_score": 0.11389718076285239,
+      "features": {
+        "A": 0.0,
+        "B": 0.95,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0044444444444444444,
+        "H": 0.0
+      },
+      "time_ms": 0.7248749607242644
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 59.39433298772201
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 328.58779199887067
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.42633397970348597
+    }
+  },
+  {
+    "file": "db_models.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/db_models.py",
+    "tiers_4": {
+      "knot_score": 0.16417910447761194,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.3333333333333333,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.5081249983049929
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 59.41854097181931
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 382.20004201866686
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.33424998400732875
+    }
+  },
+  {
+    "file": "http_client.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/http_client.py",
+    "tiers_4": {
+      "knot_score": 0.11389718076285239,
+      "features": {
+        "A": 0.0,
+        "B": 0.95,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0044444444444444444,
+        "H": 0.0
+      },
+      "time_ms": 1.0047079995274544
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 60.21016597514972
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 990.2927500079386
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.5584589671343565
+    }
+  },
+  {
+    "file": "logger.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/logger.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.5019590025767684
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 54.864709032699466
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 385.77312498819083
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.18700002692639828
+    }
+  },
+  {
+    "file": "task_queue.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/task_queue.py",
+    "tiers_4": {
+      "knot_score": 0.10155887230514099,
+      "features": {
+        "A": 0.0,
+        "B": 0.8,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.05777777777777779,
+        "H": 0.0
+      },
+      "time_ms": 1.1719579924829304
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 56.17591697955504
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 489.5212090341374
+    },
+    "feature_a_v5": {
+      "score": 0.0,
+      "time_ms": 0.6397910183295608
+    }
+  },
+  {
+    "file": "validation.py",
+    "category": "realistic",
+    "path": "test_corpus/realistic/validation.py",
+    "tiers_4": {
+      "knot_score": 0.11940298507462686,
+      "features": {
+        "A": 0.0,
+        "B": 1.0,
+        "C": 0.0,
+        "D": 0.0,
+        "E": 0.0,
+        "F": 0.0,
+        "H": 0.0
+      },
+      "time_ms": 0.9046249906532466
+    },
+    "radon": {
+      "avg_cc": 0.0,
+      "max_cc": 0.0,
+      "time_ms": 60.852167021948844
+    },
+    "pylint": {
+      "issues": 0,
+      "errors": 0,
+      "warnings": 0,
+      "time_ms": 456.1107500339858
+    },
+    "feature_a_v5": {
+      "score": 0.6,
+      "time_ms": 0.4183329874649644
+    }
+  }
+]
