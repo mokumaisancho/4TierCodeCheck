@@ -261,7 +261,7 @@ python3 benchmarks/run_full_comparison_61files.py
 
 ## License
 
-MIT License - See LICENSE file
+Apache License 2.0 - See LICENSE file
 
 ## Acknowledgments
 

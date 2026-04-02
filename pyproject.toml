@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "Experimental multi-tier heuristic code health analyzer"
 readme = "README.md"
 requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
 dependencies = [
   "numpy>=1.24",
   "pandas>=2.0",
@@ -22,6 +23,7 @@ classifiers = [
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
   "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
   "Topic :: Software Development :: Quality Assurance",
 ]
 
