@@ -38,6 +38,8 @@ class CodeKnot:
     lines_of_code: int
     refactoring_suggestion: str
     severity: str  # 'low', 'medium', 'high', 'critical'
+    # Hybrid Feature A breakdown
+    feature_a_breakdown: Dict[str, float] = field(default_factory=dict)
 
 
 @dataclass
@@ -285,13 +287,15 @@ class StaticCodeKnotAnalyzer:
         """
         
         if not self.functions:
-            return {k: 0.0 for k in ['A', 'B', 'C', 'D', 'E', 'F', 'H']}
+            empty_features = {k: 0.0 for k in ['A', 'B', 'C', 'D', 'E', 'F', 'H']}
+            empty_breakdown = {'A_exact': 0.0, 'A_near': 0.0, 'A_combined': 0.0}
+            return empty_features, empty_breakdown
         
         total_functions = len(self.functions)
         
-        # A: Regression - code duplication
-        funcs_with_duplication = sum(1 for f in self.functions if f.duplicated_blocks)
-        A = funcs_with_duplication / total_functions
+        # A: Regression - code duplication (hybrid: exact + near)
+        a_hybrid = self.calculate_feature_a_hybrid()
+        A = a_hybrid['A_combined']  # Use conservative combined score
         
         # B: Isomorphism - similar complexity patterns
         complexities = [f.complexity for f in self.functions]
@@ -333,7 +337,109 @@ class StaticCodeKnotAnalyzer:
             'E': min(E, 1.0),
             'F': min(F, 1.0),
             'H': min(H, 1.0)
+        }, a_hybrid  # Return both features and A breakdown
+    
+    def calculate_feature_a_hybrid(self) -> Dict[str, float]:
+        """
+        Calculate hybrid Feature A: exact + near-duplicate detection.
+        
+        Returns:
+            {
+                'A_exact': exact duplicate score (existing),
+                'A_near': near-duplicate score (v5),
+                'A_combined': conservative synthesis
+            }
+        """
+        # A_exact: Existing exact duplicate detection (function level)
+        total_functions = len(self.functions)
+        if total_functions == 0:
+            return {'A_exact': 0.0, 'A_near': 0.0, 'A_combined': 0.0}
+        
+        funcs_with_duplication = sum(1 for f in self.functions if f.duplicated_blocks)
+        A_exact = funcs_with_duplication / total_functions
+        
+        # A_near: v5 near-duplicate detection (AST-based)
+        A_near = self._calculate_near_duplicate_score()
+        
+        # A_combined: Conservative synthesis
+        # Prefer exact matches, weight near matches at 70%
+        A_combined = max(A_exact, 0.7 * A_near)
+        
+        return {
+            'A_exact': round(A_exact, 3),
+            'A_near': round(A_near, 3),
+            'A_combined': round(A_combined, 3)
         }
+    
+    def _extract_function_signature_v5(self, node) -> dict:
+        """Extract function signature for near-duplicate detection."""
+        stmt_types = tuple(type(s).__name__ for s in node.body)
+        
+        return {
+            'params': len(node.args.args),
+            'body_len': len(node.body),
+            'stmts': stmt_types,
+            'ifs': sum(1 for n in ast.walk(node) if isinstance(n, ast.If)),
+            'loops': sum(1 for n in ast.walk(node) if isinstance(n, (ast.For, ast.While))),
+            'tries': sum(1 for n in ast.walk(node) if isinstance(n, ast.Try)),
+            'lines': getattr(node, 'end_lineno', 10) - node.lineno,
+        }
+    
+    def _is_near_duplicate(self, sig1: dict, sig2: dict) -> tuple:
+        """Check if two functions are near-duplicates."""
+        # Require same body length
+        if sig1['body_len'] != sig2['body_len']:
+            return False, 0.0
+        
+        # Require same statement sequence
+        if sig1['stmts'] != sig2['stmts']:
+            return False, 0.0
+        
+        # Filter out trivial functions
+        if sig1['body_len'] <= 1:
+            return False, 0.0
+        
+        # Calculate confidence
+        confidence = 1.0
+        if sig1['params'] != sig2['params']:
+            confidence = 0.9
+        
+        return True, confidence
+    
+    def _calculate_near_duplicate_score(self) -> float:
+        """Calculate near-duplicate score using v5 algorithm."""
+        try:
+            tree = ast.parse(self.content)
+        except:
+            return 0.0
+        
+        functions = [n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)]
+        if len(functions) < 2:
+            return 0.0
+        
+        sigs = [self._extract_function_signature_v5(f) for f in functions]
+        duplicates = []
+        
+        for i, sig1 in enumerate(sigs):
+            for sig2 in sigs[i+1:]:
+                is_dup, conf = self._is_near_duplicate(sig1, sig2)
+                if is_dup:
+                    duplicates.append(conf)
+        
+        if not duplicates:
+            return 0.0
+        
+        num_dups = len(duplicates)
+        avg_conf = sum(duplicates) / len(duplicates)
+        
+        if num_dups >= 3:
+            score = 0.7 + 0.3 * avg_conf
+        elif num_dups == 2:
+            score = 0.5 + 0.3 * avg_conf
+        else:
+            score = 0.3 + 0.3 * avg_conf
+        
+        return min(score, 1.0)
     
     def calculate_knot_score(self, features: Dict[str, float]) -> float:
         """Calculate overall knot score."""
@@ -369,7 +475,7 @@ class StaticCodeKnotAnalyzer:
     
     def analyze(self) -> CodeKnot:
         """Run complete analysis."""
-        features = self.calculate_knot_features()
+        features, a_breakdown = self.calculate_knot_features()
         knot_score = self.calculate_knot_score(features)
         
         # Calculate severity
@@ -393,7 +499,8 @@ class StaticCodeKnotAnalyzer:
             complexity=total_complexity,
             lines_of_code=total_lines,
             refactoring_suggestion=self.get_refactoring_suggestion(features),
-            severity=severity
+            severity=severity,
+            feature_a_breakdown=a_breakdown
         )
     
     def get_detailed_report(self) -> str:
@@ -427,6 +534,14 @@ class StaticCodeKnotAnalyzer:
         for feature, score in sorted(knot.features.items(), key=lambda x: x[1], reverse=True):
             bar = "█" * int(score * 20)
             report.append(f"   {feature} ({feature_names[feature]}): {score:.2f} {bar}")
+        
+        # Show Feature A breakdown if available
+        if knot.feature_a_breakdown:
+            report.append(f"\n   📊 Feature A Breakdown:")
+            a = knot.feature_a_breakdown
+            report.append(f"      A_exact (exact dup):    {a['A_exact']:.2f}")
+            report.append(f"      A_near (structural):    {a['A_near']:.2f}")
+            report.append(f"      A_combined (weighted):  {a['A_combined']:.2f} = max({a['A_exact']}, 0.7×{a['A_near']})")
         
         report.append(f"\n💡 Primary Suggestion:")
         report.append(f"   {knot.refactoring_suggestion}")
