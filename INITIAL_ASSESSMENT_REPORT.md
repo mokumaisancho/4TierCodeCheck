@@ -27,7 +27,7 @@
 
 | File | Lines | Size | % of Total |
 |------|-------|------|------------|
-| code_knot_detector.py | 635 | 22.5 KB | 22% |
+| temporal_knot_detector.py | 635 | 22.5 KB | 22% |
 | static_code_knot_analyzer.py | 550 | 20.4 KB | 20% |
 | knot_detector_v3.py | 488 | 17.3 KB | 17% |
 | dynamic_code_knot_analyzer.py | 441 | 15.7 KB | 16% |
@@ -44,7 +44,7 @@
 - Reasonable file sizes (most < 500 lines)
 
 ⚠️ **Observations:**
-- `code_knot_detector.py` largest at 635 lines
+- `temporal_knot_detector.py` largest at 635 lines
 - Consider splitting if grows beyond 700 lines
 
 ---
@@ -67,7 +67,7 @@
 
 | File | Knot Score | Severity | Primary Feature |
 |------|------------|----------|-----------------|
-| code_knot_detector.py | 0.093 | low | F |
+| temporal_knot_detector.py | 0.093 | low | F |
 | conftest.py | 0.185 | low | B |
 | dynamic_code_knot_analyzer.py | 0.176 | low | F |
 | knot_detector_v3.py | 0.125 | low | B |
@@ -179,7 +179,7 @@ git commit -m "Initial commit - 4-tiers system"
 ### Low Priority
 
 5. **Monitor File Growth**
-   - Watch: code_knot_detector.py (635 lines)
+   - Watch: temporal_knot_detector.py (635 lines)
    - Threshold: Split if exceeds 700 lines
 
 ---

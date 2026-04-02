@@ -9,7 +9,7 @@ Psychological knot-explosion-insight detection applied to code analysis.
 | 1 | Structure | `knot_detector_v3.py` | File Relationship Tree (FRT) |
 | 2 | Static | `static_code_knot_analyzer.py` | AST-based analysis |
 | 3 | Dynamic | `dynamic_code_knot_analyzer.py` | Runtime trace analysis |
-| 4 | Temporal | `code_knot_detector.py` | Git history evolution |
+| 4 | Temporal | `temporal_knot_detector.py` | Git history evolution |
 
 ## Optimal Strategy Feature
 
@@ -44,7 +44,7 @@ results = batch.analyze_batch(['file1.py', 'file2.py', ...])
 - `knot_detector_v3.py` (487 lines) - Core 8-feature detection
 - `static_code_knot_analyzer.py` (549 lines) - AST static analysis
 - `dynamic_code_knot_analyzer.py` (440 lines) - Runtime analysis
-- `code_knot_detector.py` (634 lines) - Temporal/git analysis
+- `temporal_knot_detector.py` (634 lines) - Temporal/git analysis
 - `optimized_knot_analyzer.py` (392 lines) - Caching & performance
 - `parallel_batch_analyzer.py` (197 lines) - **Auto strategy selection**
 - `unified_analyzer_demo.py` (115 lines) - Demo all 4 tiers
