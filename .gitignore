@@ -36,6 +36,12 @@ build/
 dist/
 *.egg-info/
 
+# Local archive (keep out of public repo)
+legacy/
+
+# Local archive (keep out of public repo)
+legacy/
+
 # Security - Credentials and Keys
 .env
 .env.local

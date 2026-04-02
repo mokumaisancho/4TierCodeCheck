@@ -36,7 +36,6 @@ py-modules = [
   "temporal_knot_detector",
   "parallel_batch_analyzer",
   "optimized_knot_analyzer",
-  "unified_analyzer_demo",
 ]
 
 [tool.pytest.ini_options]

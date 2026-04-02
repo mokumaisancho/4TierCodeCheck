@@ -220,13 +220,13 @@ python3 -m pytest test_knot_detector.py -v
 ### Run Benchmark
 
 ```bash
-python3 demo_hybrid_feature_a.py
+python3 demos/demo_hybrid_feature_a.py
 ```
 
 ### Compare with Other Tools
 
 ```bash
-python3 run_full_comparison_61files.py
+python3 benchmarks/run_full_comparison_61files.py
 ```
 
 ## Success Criteria (Met ✅)
@@ -255,9 +255,9 @@ python3 run_full_comparison_61files.py
 
 ## Documentation
 
-- `HYBRID_FEATURE_A_v3.md` - Detailed architecture
-- `FINAL_COMPARISON_61FILES.md` - Benchmark results
-- `FEATURE_A_IMPROVEMENT_SUMMARY.md` - Evolution history
+- `docs/HYBRID_FEATURE_A_v3.md` - Detailed architecture
+- `docs/FINAL_COMPARISON_61FILES.md` - Benchmark results
+- `docs/README.md` - Extended project documentation
 
 ## License
 

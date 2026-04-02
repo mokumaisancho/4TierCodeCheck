@@ -14,7 +14,7 @@ from pathlib import Path
 from collections import defaultdict
 
 # Import 4-Tiers
-from static_code_knot_analyzer import StaticCodeKnotAnalyzer
+from src.static_code_knot_analyzer import StaticCodeKnotAnalyzer
 
 # Import Feature A v5
 import ast
