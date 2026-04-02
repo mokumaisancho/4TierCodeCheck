@@ -1,0 +1,677 @@
+[
+  {
+    "file": "complex_algorithm.py",
+    "category": "complex",
+    "lines": 46,
+    "4tiers": {
+      "knot_score": 0.2835820895522388,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.5361669939011335
+    },
+    "radon": {
+      "max_cc": 19,
+      "mi": 49.6391586027265,
+      "loc": 45,
+      "time_ms": 1.9793329993262887
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 340.13770800083876
+    },
+    "agreement": {
+      "tiers_flagged": true,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 2
+    }
+  },
+  {
+    "file": "complex_nested.py",
+    "category": "complex",
+    "lines": 46,
+    "4tiers": {
+      "knot_score": 0.2835820895522388,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.6127919661812484
+    },
+    "radon": {
+      "max_cc": 19,
+      "mi": 49.6391586027265,
+      "loc": 45,
+      "time_ms": 1.8122500041499734
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 281.21829096926376
+    },
+    "agreement": {
+      "tiers_flagged": true,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 2
+    }
+  },
+  {
+    "file": "complex_parser.py",
+    "category": "complex",
+    "lines": 46,
+    "4tiers": {
+      "knot_score": 0.2835820895522388,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.6103750094771385
+    },
+    "radon": {
+      "max_cc": 19,
+      "mi": 49.6391586027265,
+      "loc": 45,
+      "time_ms": 1.8750830204226077
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 276.78879199083894
+    },
+    "agreement": {
+      "tiers_flagged": true,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 2
+    }
+  },
+  {
+    "file": "complex_recursion.py",
+    "category": "complex",
+    "lines": 46,
+    "4tiers": {
+      "knot_score": 0.2835820895522388,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.6485420055687428
+    },
+    "radon": {
+      "max_cc": 19,
+      "mi": 49.6391586027265,
+      "loc": 45,
+      "time_ms": 1.9129159627482295
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 280.00320796854794
+    },
+    "agreement": {
+      "tiers_flagged": true,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 2
+    }
+  },
+  {
+    "file": "complex_state_machine.py",
+    "category": "complex",
+    "lines": 46,
+    "4tiers": {
+      "knot_score": 0.2835820895522388,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.5607079840265214
+    },
+    "radon": {
+      "max_cc": 19,
+      "mi": 49.6391586027265,
+      "loc": 45,
+      "time_ms": 1.8546669743955135
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 275.8741250145249
+    },
+    "agreement": {
+      "tiers_flagged": true,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 2
+    }
+  },
+  {
+    "file": "duplicate_api_calls.py",
+    "category": "duplicate",
+    "lines": 29,
+    "4tiers": {
+      "knot_score": 0.11940298507462686,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.0151250171475112
+    },
+    "radon": {
+      "max_cc": 4,
+      "mi": 54.83662836918503,
+      "loc": 28,
+      "time_ms": 1.0898339678533375
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 275.9979169932194
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "duplicate_logging.py",
+    "category": "duplicate",
+    "lines": 29,
+    "4tiers": {
+      "knot_score": 0.11940298507462686,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.9729579905979335
+    },
+    "radon": {
+      "max_cc": 4,
+      "mi": 54.83662836918503,
+      "loc": 28,
+      "time_ms": 1.062791037838906
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 265.72354102972895
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "duplicate_validation.py",
+    "category": "duplicate",
+    "lines": 29,
+    "4tiers": {
+      "knot_score": 0.11940298507462686,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.0210410109721124
+    },
+    "radon": {
+      "max_cc": 4,
+      "mi": 54.83662836918503,
+      "loc": 28,
+      "time_ms": 1.080791000276804
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 308.23974998202175
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "issues_complexity_spike.py",
+    "category": "issues",
+    "lines": 15,
+    "4tiers": {
+      "knot_score": 0.2835820895522388,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.8122079889290035
+    },
+    "radon": {
+      "max_cc": 6,
+      "mi": 59.25211404248567,
+      "loc": 14,
+      "time_ms": 0.837916973978281
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 285.34050000598654
+    },
+    "agreement": {
+      "tiers_flagged": true,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 2
+    }
+  },
+  {
+    "file": "issues_dead_code.py",
+    "category": "issues",
+    "lines": 11,
+    "4tiers": {
+      "knot_score": 0.26865671641791045,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.41966699063777924
+    },
+    "radon": {
+      "max_cc": 2,
+      "mi": 90.83998008263792,
+      "loc": 10,
+      "time_ms": 0.3929169615730643
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 278.05741695920005
+    },
+    "agreement": {
+      "tiers_flagged": true,
+      "radon_flagged": false,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "issues_long_function.py",
+    "category": "issues",
+    "lines": 17,
+    "4tiers": {
+      "knot_score": 0.11940298507462686,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.8176660048775375
+    },
+    "radon": {
+      "max_cc": 1,
+      "mi": 58.98794669167313,
+      "loc": 16,
+      "time_ms": 0.9688339778222144
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 324.5617499924265
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "issues_many_params.py",
+    "category": "issues",
+    "lines": 5,
+    "4tiers": {
+      "knot_score": 0.2835820895522388,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.4260829882696271
+    },
+    "radon": {
+      "max_cc": 1,
+      "mi": 77.4484663740452,
+      "loc": 4,
+      "time_ms": 0.5783750093542039
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 302.6547920308076
+    },
+    "agreement": {
+      "tiers_flagged": true,
+      "radon_flagged": false,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "issues_todo.py",
+    "category": "issues",
+    "lines": 11,
+    "4tiers": {
+      "knot_score": 0.2537313432835821,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.3929579979740083
+    },
+    "radon": {
+      "max_cc": 2,
+      "mi": 100.0,
+      "loc": 10,
+      "time_ms": 0.3665830008685589
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 273.0250000022352
+    },
+    "agreement": {
+      "tiers_flagged": true,
+      "radon_flagged": false,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "medium_classes.py",
+    "category": "medium",
+    "lines": 34,
+    "4tiers": {
+      "knot_score": 0.10619402985074627,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.1867920402437449
+    },
+    "radon": {
+      "max_cc": 6,
+      "mi": 51.91125122178889,
+      "loc": 33,
+      "time_ms": 1.3645830331370234
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 276.8351669656113
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "medium_conditionals.py",
+    "category": "medium",
+    "lines": 34,
+    "4tiers": {
+      "knot_score": 0.10619402985074627,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.19329197332263
+    },
+    "radon": {
+      "max_cc": 6,
+      "mi": 51.91125122178889,
+      "loc": 33,
+      "time_ms": 1.3462500064633787
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 277.2519169957377
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "medium_error_handling.py",
+    "category": "medium",
+    "lines": 34,
+    "4tiers": {
+      "knot_score": 0.10619402985074627,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.2181670172140002
+    },
+    "radon": {
+      "max_cc": 6,
+      "mi": 51.91125122178889,
+      "loc": 33,
+      "time_ms": 1.400750013999641
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 275.226375029888
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "medium_functions.py",
+    "category": "medium",
+    "lines": 34,
+    "4tiers": {
+      "knot_score": 0.10619402985074627,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.1844169930554926
+    },
+    "radon": {
+      "max_cc": 6,
+      "mi": 51.91125122178889,
+      "loc": 33,
+      "time_ms": 1.325791992712766
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 272.4660829990171
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "medium_loops.py",
+    "category": "medium",
+    "lines": 34,
+    "4tiers": {
+      "knot_score": 0.10619402985074627,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.1754170409403741
+    },
+    "radon": {
+      "max_cc": 6,
+      "mi": 51.91125122178889,
+      "loc": 33,
+      "time_ms": 1.3349580112844706
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 281.3365829642862
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "mixed_realistic_1.py",
+    "category": "mixed",
+    "lines": 41,
+    "4tiers": {
+      "knot_score": 0.10009328358208958,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.3340840232558548
+    },
+    "radon": {
+      "max_cc": 5,
+      "mi": 53.309796007554795,
+      "loc": 40,
+      "time_ms": 1.5145419747568667
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 487.96933295670897
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "mixed_realistic_2.py",
+    "category": "mixed",
+    "lines": 41,
+    "4tiers": {
+      "knot_score": 0.10009328358208958,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 1.444916008040309
+    },
+    "radon": {
+      "max_cc": 5,
+      "mi": 53.309796007554795,
+      "loc": 40,
+      "time_ms": 1.674500002991408
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 474.78237497853115
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": true,
+      "pylint_flagged": false,
+      "flags_count": 1
+    }
+  },
+  {
+    "file": "simple_dicts.py",
+    "category": "simple",
+    "lines": 20,
+    "4tiers": {
+      "knot_score": 0.11382462686567164,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.59254199732095
+    },
+    "radon": {
+      "max_cc": 2,
+      "mi": 61.775242834354245,
+      "loc": 19,
+      "time_ms": 0.6002910085953772
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 274.2672500316985
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": false,
+      "pylint_flagged": false,
+      "flags_count": 0
+    }
+  },
+  {
+    "file": "simple_io.py",
+    "category": "simple",
+    "lines": 20,
+    "4tiers": {
+      "knot_score": 0.11382462686567164,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.5875409697182477
+    },
+    "radon": {
+      "max_cc": 2,
+      "mi": 61.775242834354245,
+      "loc": 19,
+      "time_ms": 0.597915961407125
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 277.83249999629334
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": false,
+      "pylint_flagged": false,
+      "flags_count": 0
+    }
+  },
+  {
+    "file": "simple_lists.py",
+    "category": "simple",
+    "lines": 20,
+    "4tiers": {
+      "knot_score": 0.11382462686567164,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.5903749843128026
+    },
+    "radon": {
+      "max_cc": 2,
+      "mi": 61.775242834354245,
+      "loc": 19,
+      "time_ms": 0.5939999828115106
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 275.88954201200977
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": false,
+      "pylint_flagged": false,
+      "flags_count": 0
+    }
+  },
+  {
+    "file": "simple_math.py",
+    "category": "simple",
+    "lines": 20,
+    "4tiers": {
+      "knot_score": 0.11382462686567164,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.5924999713897705
+    },
+    "radon": {
+      "max_cc": 2,
+      "mi": 61.775242834354245,
+      "loc": 19,
+      "time_ms": 0.6098329904489219
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 274.93595896521583
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": false,
+      "pylint_flagged": false,
+      "flags_count": 0
+    }
+  },
+  {
+    "file": "simple_strings.py",
+    "category": "simple",
+    "lines": 20,
+    "4tiers": {
+      "knot_score": 0.11382462686567164,
+      "severity": "low",
+      "top_feature": "B",
+      "time_ms": 0.649290974251926
+    },
+    "radon": {
+      "max_cc": 2,
+      "mi": 61.775242834354245,
+      "loc": 19,
+      "time_ms": 0.6627090042456985
+    },
+    "pylint": {
+      "issues": 0,
+      "time_ms": 276.25783398980275
+    },
+    "agreement": {
+      "tiers_flagged": false,
+      "radon_flagged": false,
+      "pylint_flagged": false,
+      "flags_count": 0
+    }
+  }
+]
