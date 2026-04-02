@@ -35,3 +35,26 @@ Thumbs.db
 build/
 dist/
 *.egg-info/
+
+# Security - Credentials and Keys
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+*.p12
+*.pfx
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.crt
+*.cer
+*.der
+*.priv
+.secrets
+*.secret
+tokens.json
+credentials.json
+secrets.yaml
+secrets.yml
