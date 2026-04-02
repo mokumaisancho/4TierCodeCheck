@@ -43,7 +43,7 @@ def _build_error_result(path: str, error: Exception | str) -> Dict[str, Any]:
 
 def _analyze_single(args: Tuple[str, int]):
     """Worker function - must be picklable."""
-    from static_code_knot_analyzer import StaticCodeKnotAnalyzer
+    from src.static_code_knot_analyzer import StaticCodeKnotAnalyzer
     path, index = args
     try:
         analyzer = StaticCodeKnotAnalyzer(path)
@@ -131,7 +131,7 @@ class ParallelBatchAnalyzer:
             # Sequential processing
             results = []
             for i, path in enumerate(files):
-                from static_code_knot_analyzer import StaticCodeKnotAnalyzer
+                from src.static_code_knot_analyzer import StaticCodeKnotAnalyzer
                 try:
                     analyzer = StaticCodeKnotAnalyzer(path)
                     knot = analyzer.analyze()

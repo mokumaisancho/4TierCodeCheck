@@ -5,8 +5,10 @@ Demonstrate Hybrid Feature A Implementation
 Shows A_exact, A_near, and A_combined for different file types.
 """
 
-from static_code_knot_analyzer import StaticCodeKnotAnalyzer
+import sys
 from pathlib import Path
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from src.static_code_knot_analyzer import StaticCodeKnotAnalyzer
 
 def analyze_file(filepath):
     """Analyze a file and return Feature A breakdown."""

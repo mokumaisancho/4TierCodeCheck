@@ -18,11 +18,11 @@ import sys
 from pathlib import Path
 
 # Import modules under test
-from knot_detector_v3 import KnotDetectorV3
-from static_code_knot_analyzer import StaticCodeKnotAnalyzer, CodeKnot
-from dynamic_code_knot_analyzer import DynamicCodeKnotAnalyzer, ExecutionTrace
-from parallel_batch_analyzer import ParallelBatchAnalyzer
-from optimized_knot_analyzer import FastKnotAnalyzer, FastKnotFeatures
+from src.knot_detector_v3 import KnotDetectorV3
+from src.static_code_knot_analyzer import StaticCodeKnotAnalyzer, CodeKnot
+from src.dynamic_code_knot_analyzer import DynamicCodeKnotAnalyzer, ExecutionTrace
+from src.parallel_batch_analyzer import ParallelBatchAnalyzer
+from src.optimized_knot_analyzer import FastKnotAnalyzer, FastKnotFeatures
 
 
 # =============================================================================
