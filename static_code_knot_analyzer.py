@@ -371,17 +371,25 @@ class StaticCodeKnotAnalyzer:
             'A_combined': round(A_combined, 3)
         }
     
-    def _extract_function_signature_v5(self, node) -> dict:
-        """Extract function signature for near-duplicate detection."""
+    def _extract_function_signature_v5(self, node, class_name: str = None) -> dict:
+        """Extract function/method signature for near-duplicate detection."""
         stmt_types = tuple(type(s).__name__ for s in node.body)
         
+        is_method = False
+        if node.args.args and node.args.args[0].arg in ('self', 'cls'):
+            is_method = True
+        
         return {
+            'name': node.name,
+            'class': class_name,
+            'is_method': is_method,
             'params': len(node.args.args),
             'body_len': len(node.body),
             'stmts': stmt_types,
             'ifs': sum(1 for n in ast.walk(node) if isinstance(n, ast.If)),
             'loops': sum(1 for n in ast.walk(node) if isinstance(n, (ast.For, ast.While))),
             'tries': sum(1 for n in ast.walk(node) if isinstance(n, ast.Try)),
+            'calls': sum(1 for n in ast.walk(node) if isinstance(n, ast.Call)),
             'lines': getattr(node, 'end_lineno', 10) - node.lineno,
         }
     
@@ -406,31 +414,114 @@ class StaticCodeKnotAnalyzer:
         
         return True, confidence
     
+    def _find_all_callables(self, tree: ast.AST) -> list:
+        """Find all functions and methods with their signatures."""
+        callables = []
+        
+        # First: collect all classes and their methods
+        for node in ast.walk(tree):
+            if isinstance(node, ast.ClassDef):
+                for item in node.body:
+                    if isinstance(item, ast.FunctionDef):
+                        sig = self._extract_function_signature_v5(item, node.name)
+                        callables.append(sig)
+        
+        # Second: find standalone functions
+        for node in ast.walk(tree):
+            if isinstance(node, ast.FunctionDef):
+                is_in_class = False
+                for potential_class in ast.walk(tree):
+                    if isinstance(potential_class, ast.ClassDef):
+                        if node in potential_class.body:
+                            is_in_class = True
+                            break
+                if not is_in_class:
+                    sig = self._extract_function_signature_v5(node, None)
+                    callables.append(sig)
+        
+        return callables
+    
+    def _is_function_duplicate(self, sig1: dict, sig2: dict) -> tuple:
+        """Check if two functions are duplicates (cross-function, any name)."""
+        if sig1['class'] or sig2['class']:
+            return False, 0.0
+        
+        if sig1['body_len'] != sig2['body_len']:
+            return False, 0.0
+        
+        if sig1['body_len'] <= 1:
+            return False, 0.0
+        
+        if sig1['stmts'] != sig2['stmts']:
+            return False, 0.0
+        
+        confidence = 1.0
+        if sig1['params'] != sig2['params']:
+            confidence = 0.9
+        
+        return True, confidence
+    
+    def _is_method_duplicate(self, sig1: dict, sig2: dict) -> tuple:
+        """Check if two methods are duplicates (cross-class, same name)."""
+        if not sig1['class'] and not sig2['class']:
+            return False, 0.0
+        
+        if sig1['name'] != sig2['name']:
+            return False, 0.0
+        
+        if sig1['body_len'] != sig2['body_len']:
+            return False, 0.0
+        
+        if sig1['stmts'] != sig2['stmts']:
+            return False, 0.0
+        
+        # For 1-liners, add extra checks
+        if sig1['body_len'] == 1:
+            if sig1['calls'] != sig2['calls']:
+                return False, 0.0
+            return 0.9, 'method_1liner'
+        
+        confidence = 1.0
+        if sig1['params'] != sig2['params']:
+            confidence = 0.9
+        
+        return confidence, 'method'
+    
     def _calculate_near_duplicate_score(self) -> float:
-        """Calculate near-duplicate score using v5 algorithm."""
+        """Calculate near-duplicate score using v3 algorithm (functions + class methods)."""
         try:
             tree = ast.parse(self.content)
         except:
             return 0.0
         
-        functions = [n for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)]
-        if len(functions) < 2:
+        callables = self._find_all_callables(tree)
+        
+        if len(callables) < 2:
             return 0.0
         
-        sigs = [self._extract_function_signature_v5(f) for f in functions]
-        duplicates = []
+        function_dups = []
+        method_dups = []
         
-        for i, sig1 in enumerate(sigs):
-            for sig2 in sigs[i+1:]:
-                is_dup, conf = self._is_near_duplicate(sig1, sig2)
-                if is_dup:
-                    duplicates.append(conf)
+        for i, sig1 in enumerate(callables):
+            for sig2 in callables[i+1:]:
+                # Try function duplicate detection
+                is_func_dup, conf = self._is_function_duplicate(sig1, sig2)
+                if is_func_dup:
+                    function_dups.append(conf)
+                    continue
+                
+                # Try method duplicate detection
+                method_conf, _ = self._is_method_duplicate(sig1, sig2)
+                if method_conf > 0:
+                    method_dups.append(method_conf)
         
-        if not duplicates:
+        all_dups = function_dups + method_dups
+        
+        if not all_dups:
             return 0.0
         
-        num_dups = len(duplicates)
-        avg_conf = sum(duplicates) / len(duplicates)
+        num_dups = len(all_dups)
+        avg_conf = sum(all_dups) / len(all_dups)
         
         if num_dups >= 3:
             score = 0.7 + 0.3 * avg_conf
