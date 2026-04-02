@@ -27,3 +27,11 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.temp
+
+# Local analyzer cache
+.knot_cache/
+
+# Packaging
+build/
+dist/
+*.egg-info/

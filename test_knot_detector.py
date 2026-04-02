@@ -22,6 +22,7 @@ from knot_detector_v3 import KnotDetectorV3
 from static_code_knot_analyzer import StaticCodeKnotAnalyzer, CodeKnot
 from dynamic_code_knot_analyzer import DynamicCodeKnotAnalyzer, ExecutionTrace
 from parallel_batch_analyzer import ParallelBatchAnalyzer
+from optimized_knot_analyzer import FastKnotAnalyzer, FastKnotFeatures
 
 
 # =============================================================================
@@ -322,6 +323,73 @@ def process(data):
         stats = batch.get_stats()
         assert 'elapsed' in stats, "Should have elapsed time"
         assert stats['elapsed'] > 0, "Should take some time"
+
+
+class TestPublishReadinessFixes:
+    """Regression tests for publish-blocking issues fixed before release."""
+
+    def test_parallel_batch_analyzer_parallel_path(self, tmp_path):
+        """Parallel branch should return successful structured results."""
+        files = []
+        code = (
+            "def process(items):\n"
+            "    total = 0\n"
+            "    for item in items:\n"
+            "        if item % 2 == 0:\n"
+            "            total += item\n"
+            "        else:\n"
+            "            total += item * 2\n"
+            "    return total\n\n"
+        ) * 30
+
+        for i in range(20):
+            path = tmp_path / f"parallel_{i}.py"
+            path.write_text(code)
+            files.append(str(path))
+
+        analyzer = ParallelBatchAnalyzer(max_workers=2)
+        results = analyzer.analyze_batch(files)
+        stats = analyzer.get_stats()
+
+        assert stats['parallel'] is True, "Should exercise the parallel branch"
+        assert stats['successful'] == len(files)
+        assert stats['failed'] == 0
+        assert all(r['success'] for r in results)
+        assert all(isinstance(r['knot'], CodeKnot) for r in results)
+
+    def test_fast_analyzer_directory_parallel(self, tmp_path):
+        """Optimized directory analyzer should work in parallel without pickling errors."""
+        for i in range(4):
+            path = tmp_path / f"fast_{i}.py"
+            path.write_text(
+                "def f(x):\n"
+                "    if x > 0:\n"
+                "        return x\n"
+                "    return 0\n"
+            )
+
+        analyzer = FastKnotAnalyzer(use_cache=False, parallel=True)
+        results = analyzer.analyze_directory_parallel(str(tmp_path))
+
+        assert len(results) == 4
+        assert all(isinstance(path, str) for path, _ in results)
+        assert all(isinstance(features, FastKnotFeatures) for _, features in results)
+
+    def test_fast_analyzer_todo_comments_affect_feature_e(self, tmp_path):
+        """Optimized analyzer should preserve comment-based TODO signal."""
+        target = tmp_path / "todo_sample.py"
+        target.write_text(
+            "# TODO: handle negative numbers\n"
+            "def f(x):\n"
+            "    if x > 0:\n"
+            "        return x\n"
+            "    return 0\n"
+        )
+
+        analyzer = FastKnotAnalyzer(use_cache=False, parallel=False)
+        result = analyzer.analyze_file_optimized(str(target))
+
+        assert result.E > 0.0
 
 
 # =============================================================================

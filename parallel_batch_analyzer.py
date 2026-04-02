@@ -13,23 +13,44 @@ Features:
 """
 
 import multiprocessing as mp
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
 from pathlib import Path
-from typing import List, Dict, Callable, Any
+from typing import List, Dict, Callable, Any, Tuple
 import time
 import math
 
 
-def _analyze_single(args):
+def _build_success_result(path: str, knot) -> Dict[str, Any]:
+    """Create a consistent success payload for both sequential and parallel paths."""
+    return {
+        'success': True,
+        'path': path,
+        'knot': knot,
+        'knots': knot,  # Backwards-compatible alias used by demo/tests
+        'score': knot.knot_score,
+        'severity': knot.severity,
+    }
+
+
+def _build_error_result(path: str, error: Exception | str) -> Dict[str, Any]:
+    """Create a consistent error payload."""
+    return {
+        'success': False,
+        'path': path,
+        'error': str(error),
+    }
+
+
+def _analyze_single(args: Tuple[str, int]):
     """Worker function - must be picklable."""
     from static_code_knot_analyzer import StaticCodeKnotAnalyzer
     path, index = args
     try:
         analyzer = StaticCodeKnotAnalyzer(path)
-        result = analyzer.analyze()
-        return (index, {'success': True, 'knots': len(result), 'path': path})
+        knot = analyzer.analyze()
+        return (index, _build_success_result(path, knot))
     except Exception as e:
-        return (index, {'success': False, 'error': str(e), 'path': path})
+        return (index, _build_error_result(path, e))
 
 
 class ParallelBatchAnalyzer:
@@ -113,21 +134,20 @@ class ParallelBatchAnalyzer:
                 from static_code_knot_analyzer import StaticCodeKnotAnalyzer
                 try:
                     analyzer = StaticCodeKnotAnalyzer(path)
-                    result = analyzer.analyze()
-                    results.append({'path': path, 'knots': result})
+                    knot = analyzer.analyze()
+                    results.append(_build_success_result(path, knot))
                 except Exception as e:
-                    results.append({'path': path, 'error': str(e)})
+                    results.append(_build_error_result(path, e))
                 
                 if progress_callback:
                     progress_callback(i + 1, len(files))
         else:
             # Parallel processing
-            mp.set_start_method('spawn', force=True)
-            
+            context = mp.get_context('spawn')
             indexed_files = [(f, i) for i, f in enumerate(files)]
             results = [None] * len(files)
             
-            with ProcessPoolExecutor(max_workers=workers) as executor:
+            with ProcessPoolExecutor(max_workers=workers, mp_context=context) as executor:
                 completed = 0
                 for index, result in executor.map(_analyze_single, indexed_files):
                     results[index] = result
@@ -137,6 +157,8 @@ class ParallelBatchAnalyzer:
         
         self._stats['elapsed'] = time.perf_counter() - self._stats['start_time']
         self._stats['throughput'] = len(files) / self._stats['elapsed']
+        self._stats['successful'] = sum(1 for r in results if r.get('success'))
+        self._stats['failed'] = len(files) - self._stats['successful']
         
         return results
     
@@ -188,7 +210,7 @@ def demo():
         print(f"  Workers: {stats['workers']}")
         print(f"  Time: {stats['elapsed']*1000:.2f} ms")
         print(f"  Throughput: {stats['throughput']:.1f} files/sec")
-        print(f"  Results: {sum(1 for r in results if r.get('knots') is not None)} successful")
+        print(f"  Results: {sum(1 for r in results if r.get('success'))} successful")
     
     print("\n" + "="*80)
 

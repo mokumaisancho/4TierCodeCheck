@@ -1,56 +1,139 @@
 # 4-Tiers Code Check System
 
-Psychological knot-explosion-insight detection applied to code analysis.
+Heuristic code-health analysis that maps static structure, runtime behavior, and Git history into a shared **"knot"** model.
 
-## Four Tiers
+> Status: **experimental / research prototype**
+>
+> This repository is best understood as an explainable, multi-perspective analyzer for exploring maintainability risk. It is **not** a replacement for mature tools such as SonarQube, Radon, coverage.py, or CodeScene.
 
-| Tier | Analyzer | File | Purpose |
-|------|----------|------|---------|
-| 1 | Structure | `knot_detector_v3.py` | File Relationship Tree (FRT) |
-| 2 | Static | `static_code_knot_analyzer.py` | AST-based analysis |
-| 3 | Dynamic | `dynamic_code_knot_analyzer.py` | Runtime trace analysis |
-| 4 | Temporal | `temporal_knot_detector.py` | Git history evolution |
+## What is a "knot"?
 
-## Optimal Strategy Feature
+In this project, a knot is a concentrated maintainability risk signal built from multiple weak indicators:
 
-`parallel_batch_analyzer.py` includes intelligent auto-selection:
+- repetition / duplication
+- contradictory logic
+- dead or untested paths
+- unresolved TODOs
+- unstable runtime behavior
+- unhealthy historical change patterns
 
-```python
-analyzer = ParallelBatchAnalyzer()
-results = analyzer.analyze_batch(files)  # Auto selects sequential vs parallel
+The main idea is not that any single indicator is novel, but that they can be presented through one shared scoring vocabulary.
+
+## The four tiers
+
+| Tier | Analyzer | File | Input | Purpose |
+|------|----------|------|-------|---------|
+| 1 | Knot model core | `knot_detector_v3.py` | CSV / temporal text | Original rule-based knot scoring model |
+| 2 | Static analysis | `static_code_knot_analyzer.py` | Python source | AST-based maintainability heuristics |
+| 3 | Dynamic analysis | `dynamic_code_knot_analyzer.py` | Executed Python module | Runtime tracing with `sys.settrace` |
+| 4 | Temporal analysis | `temporal_knot_detector.py` | Git repo | Change-history and refactoring risk heuristics |
+
+## Why this repo may still be useful
+
+- **Explainable:** scores are broken into named features (`A-H`)
+- **Multi-angle:** combines static, dynamic, and temporal signals
+- **Fast enough for experimentation:** optimized single-file analysis is millisecond-scale
+- **Hackable:** plain Python, easy to extend with new heuristics
+
+## Install
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements-dev.txt
 ```
 
-- Small batches (< 20 files) → Sequential
-- Large/complex batches → ProcessPool with 4-6 workers
-- 2-3x speedup for large codebases
+Recommended Python: **3.10+**
 
-## Quick Start
+## Quick start
+
+### 1) Static analysis for one file
 
 ```python
 from static_code_knot_analyzer import StaticCodeKnotAnalyzer
-from parallel_batch_analyzer import ParallelBatchAnalyzer
 
-# Single file
-analyzer = StaticCodeKnotAnalyzer('path/to/file.py')
-knots = analyzer.analyze()
+analyzer = StaticCodeKnotAnalyzer("path/to/file.py")
+result = analyzer.analyze()
 
-# Batch with auto-optimization
-batch = ParallelBatchAnalyzer()
-results = batch.analyze_batch(['file1.py', 'file2.py', ...])
+print(result.knot_score, result.severity, result.refactoring_suggestion)
 ```
 
-## Files
+### 2) Batch analysis with automatic sequential/parallel selection
 
-- `knot_detector_v3.py` (487 lines) - Core 8-feature detection
-- `static_code_knot_analyzer.py` (549 lines) - AST static analysis
-- `dynamic_code_knot_analyzer.py` (440 lines) - Runtime analysis
-- `temporal_knot_detector.py` (634 lines) - Temporal/git analysis
-- `optimized_knot_analyzer.py` (392 lines) - Caching & performance
-- `parallel_batch_analyzer.py` (197 lines) - **Auto strategy selection**
-- `unified_analyzer_demo.py` (115 lines) - Demo all 4 tiers
+```python
+from parallel_batch_analyzer import ParallelBatchAnalyzer
 
-## Performance
+batch = ParallelBatchAnalyzer(max_workers=4)
+results = batch.analyze_batch(["a.py", "b.py", "c.py"])
 
-- Single file: ~6.69 ms
-- Throughput: 149-350 files/sec (sequential vs parallel)
-- Large codebase (10k files): ~28 seconds (parallel)
+successful = [r for r in results if r["success"]]
+```
+
+### 3) Temporal / Git-based scan
+
+```bash
+python3 temporal_knot_detector.py /path/to/repo --min-score 0.3
+```
+
+### 4) Optimized benchmark
+
+```bash
+python3 optimized_knot_analyzer.py
+```
+
+## Validation status
+
+Current checks included in this repository:
+
+- unit and smoke tests via `pytest`
+- GitHub Actions CI workflow for push / pull request validation
+- regression coverage for:
+  - static scoring basics
+  - edge cases
+  - batch analyzer
+  - optimized analyzer parallel execution
+
+Run:
+
+```bash
+pytest -q
+```
+
+## Current limitations
+
+This repository deliberately trades completeness for transparency and speed.
+
+- Heuristics are coarse and may produce false positives / false negatives
+- Dynamic analysis uses `sys.settrace`, so runtime overhead is non-trivial
+- Temporal analysis is lightweight and does not yet match dedicated hotspot tools
+- Scores are useful for ranking and discussion, not for treating as ground truth
+
+## Repository layout
+
+- `knot_detector_v3.py` - original knot scoring core
+- `static_code_knot_analyzer.py` - AST-based code analysis
+- `dynamic_code_knot_analyzer.py` - runtime tracing
+- `temporal_knot_detector.py` - Git/history heuristics
+- `parallel_batch_analyzer.py` - auto strategy batch runner
+- `optimized_knot_analyzer.py` - cached / faster approximations
+- `test_knot_detector.py` - tests
+- `unified_analyzer_demo.py` - combined demo
+
+## Suggested positioning on GitHub
+
+If you publish this project, describe it as:
+
+- **experimental**
+- **heuristic**
+- **research prototype**
+- **explainable code health analyzer**
+
+That framing is accurate and sets good expectations.
+
+## Roadmap
+
+- improve branch/path coverage in dynamic analysis
+- calibrate scores against real-world labeled code smells
+- compare against Radon / Pylint / Sonar-style baselines
+- enrich temporal analysis with stronger hotspot metrics
+- package CLI entry points more cleanly

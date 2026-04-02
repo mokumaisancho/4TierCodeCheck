@@ -20,9 +20,8 @@ import time
 from pathlib import Path
 from typing import Dict, List, Tuple, Optional
 from dataclasses import dataclass
-from functools import lru_cache
 import multiprocessing as mp
-from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
+from concurrent.futures import ProcessPoolExecutor
 import hashlib
 import pickle
 import mmap
@@ -88,6 +87,13 @@ class CachedASTParser:
         return tree
 
 
+def _analyze_file_worker(args: Tuple[str, bool]) -> Tuple[str, FastKnotFeatures]:
+    """Pickle-safe worker for directory-level parallel analysis."""
+    file_path, use_cache = args
+    analyzer = FastKnotAnalyzer(use_cache=use_cache, parallel=False)
+    return file_path, analyzer.analyze_file_optimized(file_path)
+
+
 class FastKnotAnalyzer:
     """
     Ultra-fast knot analyzer using optimized patterns.
@@ -125,15 +131,19 @@ class FastKnotAnalyzer:
     def _analyze_standard(self, file_path: str) -> FastKnotFeatures:
         """Standard optimized analysis."""
         content = Path(file_path).read_bytes()
+        content_text = content.decode('utf-8', errors='ignore')
         
         # Parse (cached)
         if self.parser:
-            tree = self.parser.parse(file_path, content.decode('utf-8', errors='ignore'))
+            tree = self.parser.parse(file_path, content_text)
         else:
-            tree = ast.parse(content)
+            tree = ast.parse(content_text)
         
         # Single-pass metrics collection
-        metrics = self._collect_metrics_single_pass(tree)
+        metrics = self._collect_metrics_single_pass(
+            tree,
+            todo_count=len(self.todo_pattern.findall(content))
+        )
         
         # Calculate features
         features = self._calculate_features_fast(metrics)
@@ -155,10 +165,10 @@ class FastKnotAnalyzer:
                     F=0.0, H=0.3 if todo_count > 5 else 0.0
                 )
     
-    def _collect_metrics_single_pass(self, tree: ast.AST) -> Dict:
+    def _collect_metrics_single_pass(self, tree: ast.AST, todo_count: int = 0) -> Dict:
         """
         Collect all metrics in single AST walk.
-        Avoids multiple walks for efficiency.
+        Uses a recursive traversal so nesting depth is measured correctly.
         """
         metrics = {
             'function_count': 0,
@@ -168,28 +178,26 @@ class FastKnotAnalyzer:
             'for_count': 0,
             'while_count': 0,
             'except_count': 0,
-            'todo_count': 0,
+            'todo_count': todo_count,
             'return_count': 0,
             'max_nesting': 0,
             'duplicate_patterns': 0
         }
-        
-        # Stack to track nesting
-        nesting_stack = [0]
-        
-        for node in ast.walk(tree):
+
+        def walk(node: ast.AST, nesting_depth: int = 0):
             node_type = type(node)
-            
-            # Function definitions
+
             if node_type in (ast.FunctionDef, ast.AsyncFunctionDef):
                 metrics['function_count'] += 1
-                if hasattr(node, 'end_lineno') and node.lineno:
-                    metrics['total_lines'] += node.end_lineno - node.lineno
-                nesting_stack.append(nesting_stack[-1] + 1)
-                metrics['max_nesting'] = max(metrics['max_nesting'], nesting_stack[-1])
-            
-            # Complexity counters
-            elif node_type == ast.If:
+                if getattr(node, 'end_lineno', None) and getattr(node, 'lineno', None):
+                    metrics['total_lines'] += node.end_lineno - node.lineno + 1
+
+            control_depth = nesting_depth
+            if node_type in (ast.If, ast.For, ast.While, ast.ExceptHandler, ast.With, ast.Try):
+                control_depth = nesting_depth + 1
+                metrics['max_nesting'] = max(metrics['max_nesting'], control_depth)
+
+            if node_type == ast.If:
                 metrics['if_count'] += 1
                 metrics['total_complexity'] += 1
             elif node_type == ast.For:
@@ -203,10 +211,11 @@ class FastKnotAnalyzer:
                 metrics['total_complexity'] += 1
             elif node_type == ast.Return:
                 metrics['return_count'] += 1
-            
-            # Exit function
-            elif node_type in (ast.FunctionDef, ast.AsyncFunctionDef):
-                nesting_stack.pop()
+
+            for child in ast.iter_child_nodes(node):
+                walk(child, control_depth)
+
+        walk(tree)
         
         return metrics
     
@@ -258,11 +267,10 @@ class FastKnotAnalyzer:
             return [(str(f), self.analyze_file_optimized(str(f))) for f in files]
         
         # Parallel processing
-        with ProcessPoolExecutor(max_workers=mp.cpu_count()) as executor:
-            results = list(executor.map(
-                lambda f: (str(f), self.analyze_file_optimized(str(f))),
-                files
-            ))
+        context = mp.get_context('spawn')
+        worker_args = [(str(f), self.use_cache) for f in files]
+        with ProcessPoolExecutor(max_workers=mp.cpu_count(), mp_context=context) as executor:
+            results = list(executor.map(_analyze_file_worker, worker_args))
         
         return results
 
